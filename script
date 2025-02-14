@@ -1,0 +1,574 @@
+local WhiteLists = { -- using UserID
+	[7780750483] = true,
+}
+
+local function NotWhiteListed()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Blade",
+		Text = "User is not whitelisted!",
+		Duration = 3.5
+	})
+end
+local function NotWhiteListed2()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Blade",
+		Text = "Please Pay for the script!",
+		Duration = 5
+	})
+end
+
+local player = game.Players.LocalPlayer
+local UserID = player.UserId
+
+local function mainFunction()
+
+	-- Instances:
+
+	local Blade = Instance.new("ScreenGui")
+	local Holder = Instance.new("Frame")
+	local UICornerHolder = Instance.new("UICorner")
+	local Title = Instance.new("TextLabel")
+	local CloseButtonFrame = Instance.new("Frame")
+	local UICornerCloseButtonFrame = Instance.new("UICorner")
+	local UIGradient = Instance.new("UIGradient")
+	local CloseButton = Instance.new("TextButton")
+	local StickForceButton = Instance.new("TextButton")
+	local UICornerStickForceButton = Instance.new("UICorner")
+	local StickForceTitle = Instance.new("TextLabel")
+	local AutoFarmTitle = Instance.new("TextLabel")
+	local AutoFarmButton = Instance.new("TextButton")
+	local UICornerStickForceButton_2 = Instance.new("UICorner")
+	local AutoChestCollectTitle = Instance.new("TextLabel")
+	local AutoChestCollectButton = Instance.new("TextButton")
+	local UICornerStickForceButton_3 = Instance.new("UICorner")
+	local AutoCollectFruits = Instance.new("TextLabel")
+	local AutoCollectFruits_2 = Instance.new("TextButton")
+	local UICornerStickForceButton_4 = Instance.new("UICorner")
+	local AutoQuestButton = Instance.new("TextButton")
+	local UICornerStickForceButton_5 = Instance.new("UICorner")
+	local AUTOQUESTIOTitle = Instance.new("TextLabel")
+
+	--Properties:
+
+	Blade.Name = "Blade"
+	Blade.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	Blade.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	Blade.ResetOnSpawn = false
+
+	Holder.Name = "Holder"
+	Holder.Parent = Blade
+	Holder.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+	Holder.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Holder.BorderSizePixel = 0
+	Holder.Position = UDim2.new(0.262384564, 0, 0.291666657, 0)
+	Holder.Size = UDim2.new(0, 452, 0, 239)
+
+	UICornerHolder.CornerRadius = UDim.new(0.0299999993, 5)
+	UICornerHolder.Name = "UICorner-Holder"
+	UICornerHolder.Parent = Holder
+
+	Title.Name = "Title"
+	Title.Parent = Holder
+	Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Title.BackgroundTransparency = 1.000
+	Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Title.BorderSizePixel = 0
+	Title.Position = UDim2.new(0.024336284, 0, -0.00418410031, 0)
+	Title.Size = UDim2.new(0, 380, 0, 18)
+	Title.Font = Enum.Font.Jura
+	Title.Text = "BLADE | VERSION: ? | MADE BY KHILO"
+	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Title.TextScaled = true
+	Title.TextSize = 14.000
+	Title.TextWrapped = true
+	Title.TextXAlignment = Enum.TextXAlignment.Left
+
+	CloseButtonFrame.Name = "CloseButtonFrame"
+	CloseButtonFrame.Parent = Holder
+	CloseButtonFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	CloseButtonFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	CloseButtonFrame.BorderSizePixel = 0
+	CloseButtonFrame.Position = UDim2.new(0.949000001, 0, 0, 5)
+	CloseButtonFrame.Size = UDim2.new(0, 17, 0, 17)
+
+	UICornerCloseButtonFrame.CornerRadius = UDim.new(0.0299999993, 5)
+	UICornerCloseButtonFrame.Name = "UICorner-CloseButtonFrame"
+	UICornerCloseButtonFrame.Parent = CloseButtonFrame
+
+	UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(208, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(167, 0, 0))}
+	UIGradient.Rotation = 90
+	UIGradient.Parent = CloseButtonFrame
+
+	CloseButton.Name = "CloseButton"
+	CloseButton.Parent = CloseButtonFrame
+	CloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	CloseButton.BackgroundTransparency = 1.000
+	CloseButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	CloseButton.BorderSizePixel = 0
+	CloseButton.Size = UDim2.new(1, 0, 1, 0)
+	CloseButton.Font = Enum.Font.Jura
+	CloseButton.Text = "X"
+	CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	CloseButton.TextScaled = true
+	CloseButton.TextSize = 14.000
+	CloseButton.TextWrapped = true
+
+	StickForceButton.Name = "StickForceButton"
+	StickForceButton.Parent = Holder
+	StickForceButton.BackgroundColor3 = Color3.fromRGB(77, 255, 0)
+	StickForceButton.BackgroundTransparency = 1.000
+	StickForceButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	StickForceButton.BorderSizePixel = 0
+	StickForceButton.Position = UDim2.new(0.024336284, 0, 0.0920502096, 0)
+	StickForceButton.Size = UDim2.new(0, 20, 0, 20)
+	StickForceButton.Font = Enum.Font.SourceSans
+	StickForceButton.Text = ""
+	StickForceButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+	StickForceButton.TextSize = 14.000
+
+	UICornerStickForceButton.CornerRadius = UDim.new(0, 500)
+	UICornerStickForceButton.Name = "UICorner-StickForceButton"
+	UICornerStickForceButton.Parent = StickForceButton
+
+	StickForceTitle.Name = "StickForceTitle"
+	StickForceTitle.Parent = Holder
+	StickForceTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	StickForceTitle.BackgroundTransparency = 1.000
+	StickForceTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	StickForceTitle.BorderSizePixel = 0
+	StickForceTitle.Position = UDim2.new(0.0862831846, 0, 0.0920502096, 0)
+	StickForceTitle.Size = UDim2.new(0, 104, 0, 20)
+	StickForceTitle.Font = Enum.Font.Jura
+	StickForceTitle.Text = "STICK FORCE"
+	StickForceTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	StickForceTitle.TextScaled = true
+	StickForceTitle.TextSize = 14.000
+	StickForceTitle.TextWrapped = true
+	StickForceTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+	AutoFarmTitle.Name = "AutoFarmTitle"
+	AutoFarmTitle.Parent = Holder
+	AutoFarmTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	AutoFarmTitle.BackgroundTransparency = 1.000
+	AutoFarmTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	AutoFarmTitle.BorderSizePixel = 0
+	AutoFarmTitle.Position = UDim2.new(0.0862831846, 0, 0.217573225, 0)
+	AutoFarmTitle.Size = UDim2.new(0, 104, 0, 20)
+	AutoFarmTitle.Font = Enum.Font.Jura
+	AutoFarmTitle.Text = "AUTO FARM"
+	AutoFarmTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	AutoFarmTitle.TextScaled = true
+	AutoFarmTitle.TextSize = 14.000
+	AutoFarmTitle.TextWrapped = true
+	AutoFarmTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+	AutoFarmButton.Name = "AutoFarmButton"
+	AutoFarmButton.Parent = Holder
+	AutoFarmButton.BackgroundColor3 = Color3.fromRGB(77, 255, 0)
+	AutoFarmButton.BackgroundTransparency = 1.000
+	AutoFarmButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	AutoFarmButton.BorderSizePixel = 0
+	AutoFarmButton.Position = UDim2.new(0.024336284, 0, 0.217573225, 0)
+	AutoFarmButton.Size = UDim2.new(0, 20, 0, 20)
+	AutoFarmButton.Font = Enum.Font.SourceSans
+	AutoFarmButton.Text = ""
+	AutoFarmButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+	AutoFarmButton.TextSize = 14.000
+
+	UICornerStickForceButton_2.CornerRadius = UDim.new(0, 500)
+	UICornerStickForceButton_2.Name = "UICorner-StickForceButton"
+	UICornerStickForceButton_2.Parent = AutoFarmButton
+
+	AutoChestCollectTitle.Name = "AutoChestCollectTitle"
+	AutoChestCollectTitle.Parent = Holder
+	AutoChestCollectTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	AutoChestCollectTitle.BackgroundTransparency = 1.000
+	AutoChestCollectTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	AutoChestCollectTitle.BorderSizePixel = 0
+	AutoChestCollectTitle.Position = UDim2.new(0.0862831846, 0, 0.351464421, 0)
+	AutoChestCollectTitle.Size = UDim2.new(0, 135, 0, 20)
+	AutoChestCollectTitle.Font = Enum.Font.Jura
+	AutoChestCollectTitle.Text = "AUTO CHEST COLLECT"
+	AutoChestCollectTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	AutoChestCollectTitle.TextScaled = true
+	AutoChestCollectTitle.TextSize = 14.000
+	AutoChestCollectTitle.TextWrapped = true
+	AutoChestCollectTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+	AutoChestCollectButton.Name = "AutoChestCollectButton"
+	AutoChestCollectButton.Parent = Holder
+	AutoChestCollectButton.BackgroundColor3 = Color3.fromRGB(77, 255, 0)
+	AutoChestCollectButton.BackgroundTransparency = 1.000
+	AutoChestCollectButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	AutoChestCollectButton.BorderSizePixel = 0
+	AutoChestCollectButton.Position = UDim2.new(0.024336284, 0, 0.351464421, 0)
+	AutoChestCollectButton.Size = UDim2.new(0, 20, 0, 20)
+	AutoChestCollectButton.Font = Enum.Font.SourceSans
+	AutoChestCollectButton.Text = ""
+	AutoChestCollectButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+	AutoChestCollectButton.TextSize = 14.000
+
+	UICornerStickForceButton_3.CornerRadius = UDim.new(0, 500)
+	UICornerStickForceButton_3.Name = "UICorner-StickForceButton"
+	UICornerStickForceButton_3.Parent = AutoChestCollectButton
+
+	AutoCollectFruits.Name = "AutoCollectFruits"
+	AutoCollectFruits.Parent = Holder
+	AutoCollectFruits.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	AutoCollectFruits.BackgroundTransparency = 1.000
+	AutoCollectFruits.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	AutoCollectFruits.BorderSizePixel = 0
+	AutoCollectFruits.Position = UDim2.new(0.0862831846, 0, 0.489539742, 0)
+	AutoCollectFruits.Size = UDim2.new(0, 135, 0, 20)
+	AutoCollectFruits.Font = Enum.Font.Jura
+	AutoCollectFruits.Text = "AUTO COLLECT FRUITS"
+	AutoCollectFruits.TextColor3 = Color3.fromRGB(255, 255, 255)
+	AutoCollectFruits.TextScaled = true
+	AutoCollectFruits.TextSize = 14.000
+	AutoCollectFruits.TextWrapped = true
+	AutoCollectFruits.TextXAlignment = Enum.TextXAlignment.Left
+
+	AutoCollectFruits_2.Name = "AutoCollectFruits"
+	AutoCollectFruits_2.Parent = Holder
+	AutoCollectFruits_2.BackgroundColor3 = Color3.fromRGB(77, 255, 0)
+	AutoCollectFruits_2.BackgroundTransparency = 1.000
+	AutoCollectFruits_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	AutoCollectFruits_2.BorderSizePixel = 0
+	AutoCollectFruits_2.Position = UDim2.new(0.024336284, 0, 0.489539742, 0)
+	AutoCollectFruits_2.Size = UDim2.new(0, 20, 0, 20)
+	AutoCollectFruits_2.Font = Enum.Font.SourceSans
+	AutoCollectFruits_2.Text = ""
+	AutoCollectFruits_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+	AutoCollectFruits_2.TextSize = 14.000
+
+	UICornerStickForceButton_4.CornerRadius = UDim.new(0, 500)
+	UICornerStickForceButton_4.Name = "UICorner-StickForceButton"
+	UICornerStickForceButton_4.Parent = AutoCollectFruits_2
+
+	AutoQuestButton.Name = "AutoQuestButton"
+	AutoQuestButton.Parent = Holder
+	AutoQuestButton.BackgroundColor3 = Color3.fromRGB(77, 255, 0)
+	AutoQuestButton.BackgroundTransparency = 1.000
+	AutoQuestButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	AutoQuestButton.BorderSizePixel = 0
+	AutoQuestButton.Position = UDim2.new(0.024336284, 0, 0.623430967, 0)
+	AutoQuestButton.Size = UDim2.new(0, 20, 0, 20)
+	AutoQuestButton.Font = Enum.Font.SourceSans
+	AutoQuestButton.Text = ""
+	AutoQuestButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+	AutoQuestButton.TextSize = 14.000
+
+	UICornerStickForceButton_5.CornerRadius = UDim.new(0, 500)
+	UICornerStickForceButton_5.Name = "UICorner-StickForceButton"
+	UICornerStickForceButton_5.Parent = AutoQuestButton
+
+	AUTOQUESTIOTitle.Name = "AUTOQUESTIOTitle"
+	AUTOQUESTIOTitle.Parent = Holder
+	AUTOQUESTIOTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	AUTOQUESTIOTitle.BackgroundTransparency = 1.000
+	AUTOQUESTIOTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	AUTOQUESTIOTitle.BorderSizePixel = 0
+	AUTOQUESTIOTitle.Position = UDim2.new(0.0862831846, 0, 0.623430967, 0)
+	AUTOQUESTIOTitle.Size = UDim2.new(0, 135, 0, 20)
+	AUTOQUESTIOTitle.Font = Enum.Font.Jura
+	AUTOQUESTIOTitle.Text = "AUTO QUEST"
+	AUTOQUESTIOTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	AUTOQUESTIOTitle.TextScaled = true
+	AUTOQUESTIOTitle.TextSize = 14.000
+	AUTOQUESTIOTitle.TextWrapped = true
+	AUTOQUESTIOTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+	-- BLADE LOGIC:
+	local version = "2.0.0"
+
+	Title.Text = "BLADE | VERSION: "..version.." | MADE BY KHILO"
+
+	local plr = game.Players.LocalPlayer
+
+	local Enemies = workspace:FindFirstChild("Enemies")
+
+	local SFT_ = false
+	local SFT_Teleport = false
+
+	local AUTOFARM = false
+	local AutoFarmSelctedEnemy = false
+
+	local TargetCharacter
+
+	local UIStroke = Instance.new("UIStroke")
+	UIStroke.Thickness = 0.7
+	UIStroke.Color = Color3.new(1, 0, 0)
+	UIStroke.Transparency = 0
+	UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	UIStroke.Parent = Holder
+
+	local UIStroke2 = Instance.new("UIStroke", StickForceButton)
+	UIStroke2.Thickness = 1
+	UIStroke2.Color = Color3.new(1, 1, 1)
+	UIStroke2.Transparency = 0
+	UIStroke2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	UIStroke2.Parent = StickForceButton
+
+	local UIStroke3 = Instance.new("UIStroke", StickForceButton)
+	UIStroke3.Thickness = 1
+	UIStroke3.Color = Color3.new(1, 1, 1)
+	UIStroke3.Transparency = 0
+	UIStroke3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	UIStroke3.Parent = AutoFarmButton
+
+	local UIStroke4 = Instance.new("UIStroke", StickForceButton)
+	UIStroke4.Thickness = 1
+	UIStroke4.Color = Color3.new(1, 1, 1)
+	UIStroke4.Transparency = 0
+	UIStroke4.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	UIStroke4.Parent = AutoChestCollectButton
+
+	local UIStroke5 = Instance.new("UIStroke", StickForceButton)
+	UIStroke5.Thickness = 1
+	UIStroke5.Color = Color3.new(1, 1, 1)
+	UIStroke5.Transparency = 0
+	UIStroke5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	UIStroke5.Parent = AutoCollectFruits_2
+
+	local UIStroke6 = Instance.new("UIStroke", StickForceButton)
+	UIStroke6.Thickness = 1
+	UIStroke6.Color = Color3.new(1, 1, 1)
+	UIStroke6.Transparency = 0
+	UIStroke6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	UIStroke6.Parent = AutoQuestButton
+
+	Holder.Selectable = true
+	Holder.Draggable = true
+	Holder.Active = true
+
+	local function Notification(Content, Time, Wrap)
+		game:GetService("StarterGui"):SetCore("SendNotification", {
+			Text = Content or "No details provided.",
+			Duration = Time or 3.5,
+			Title = Wrap or Blade.Name,
+		})
+	end
+
+	local function Toggle_StickForceTool()
+		if SFT_ then
+			SFT_ = false
+			StickForceButton.Transparency = 1
+			if plr.Backpack:FindFirstChild("SFT") then
+				plr.Backpack:FindFirstChild("SFT"):Destroy()
+			elseif plr.Character:FindFirstChild("SFT") then
+				plr.Character:FindFirstChild("SFT"):Destroy()
+			end
+		else
+			SFT_ = true
+			StickForceButton.Transparency = 0
+			local tool = Instance.new("Tool", plr.Backpack)
+			tool.Name = "SFT"
+			tool.ToolTip = "Stick Force Tool"
+			tool.RequiresHandle = false
+
+			tool.Activated:Connect(function()
+				if not SFT_Teleport then
+					local mouse = plr:GetMouse()
+					local MouseTarget = mouse.Target
+
+					if MouseTarget and MouseTarget.Parent:FindFirstChild("Humanoid") then
+						SFT_Teleport = true
+						TargetCharacter = MouseTarget.Parent
+					end
+				else
+					SFT_Teleport = false
+					TargetCharacter = nil
+				end
+			end)
+		end
+	end
+
+	CloseButton.MouseButton1Click:Connect(function()
+		Blade:Destroy()
+		Notification("has been closed")
+
+		SFT_Teleport = false
+		if SFT_ then
+			Toggle_StickForceTool()
+		end
+	end)
+
+	local function Toggle_AutoFarm()
+		if AUTOFARM == true then
+			AUTOFARM = false
+			AutoFarmButton.Transparency = 1
+		else
+			AUTOFARM = true
+			AutoFarmButton.Transparency = 0
+		end
+	end
+
+	StickForceButton.MouseButton1Click:Connect(function()
+		Toggle_StickForceTool()
+	end)
+
+	AutoFarmButton.MouseButton1Click:Connect(function()
+		Toggle_AutoFarm()
+	end)
+
+	local AutoChestCollecting = false
+
+	local function ToggleChestCollecing()
+		if AutoChestCollecting == true then
+			AutoChestCollecting = false
+			AutoChestCollectButton.Transparency = 1
+		else
+			AutoChestCollecting = true
+			AutoChestCollectButton.Transparency = 0
+		end
+	end
+
+	AutoChestCollectButton.MouseButton1Click:Connect(function()
+		ToggleChestCollecing()
+	end)
+
+	local Enemies = workspace:WaitForChild("Enemies")
+	local _WorldOrigin = workspace:FindFirstChild("_WorldOrigin")
+	local FruitSpawns = _WorldOrigin:FindFirstChild("FruitSpawns")
+
+	local AutoCollectingFruits = false
+
+	local function AutoCollectFruits_()
+		if AutoCollectFruits == false then
+			AutoCollectingFruits = true
+			AutoCollectFruits_2.Transparency = 0
+		else
+			AutoCollectingFruits = false
+			AutoCollectFruits_2.Transparency = 1
+		end
+	end
+
+	AutoCollectFruits_2.MouseButton1Click:Connect(function()
+		AutoCollectFruits_()
+	end)
+
+	local AutoQuest = false
+
+	local function Toggle_Auto_Quest()
+		if AutoQuest == false then
+			AutoQuest = true
+			AutoQuestButton.Transparency = 0
+		else
+			AutoQuest = false
+			AutoQuestButton.Transparency = 1
+		end
+	end
+
+	AutoQuestButton.MouseButton1Click:Connect(function()
+		Toggle_Auto_Quest()
+	end)
+
+	local function Goto(position)
+		local char = plr.Character
+		local root = char:FindFirstChild("HumanoidRootPart")
+
+		root.CFrame = CFrame.new(position)
+	end
+
+	game:GetService("RunService").RenderStepped:Connect(function()
+		-- Stick Force Tool Logic
+		if SFT_Teleport and TargetCharacter then
+			local char = plr.Character
+			local root = char and char:FindFirstChild("HumanoidRootPart")
+			local tarRoot = TargetCharacter:FindFirstChild("HumanoidRootPart")
+
+			if root and tarRoot then
+				-- Ensure you are always directly behind the enemy
+				local backwardOffset = tarRoot.CFrame.LookVector * -5 -- Backward direction
+				root.CFrame = tarRoot.CFrame + backwardOffset
+			else
+				print("Parts missing for root")
+			end
+
+			-- Check if the target is still valid
+			local humanoid = TargetCharacter:FindFirstChild("Humanoid")
+			if not humanoid or humanoid.Health <= 0 then
+				SFT_Teleport = false
+				TargetCharacter = nil
+			end
+		end
+
+		-- AutoFarm Logic
+		if AUTOFARM == true then
+			local char = plr.Character
+			local root = char and char:FindFirstChild("HumanoidRootPart")
+
+			-- Find the closest valid enemy
+			local closestEnemy = nil
+			local closestDistance = math.huge -- Start with an infinitely large distance
+
+			for _, enemy in ipairs(Enemies:GetChildren()) do
+				local humanoid = enemy:FindFirstChild("Humanoid")
+				local enemyRoot = enemy:FindFirstChild("HumanoidRootPart")
+
+				-- Exclude "Saber Expert" and check if the enemy is valid
+				if humanoid and humanoid.Health > 0 and enemyRoot and enemy.Name ~= "Saber Expert" then
+					local distance = (root.Position - enemyRoot.Position).Magnitude
+					if distance < closestDistance then
+						closestDistance = distance
+						closestEnemy = enemy
+					end
+				end
+			end
+
+			AutoFarmSelctedEnemy = closestEnemy -- Continuously set the closest enemy as the target
+
+			-- Move towards the selected enemy
+			if root and AutoFarmSelctedEnemy then
+				local enemyRoot = AutoFarmSelctedEnemy:FindFirstChild("HumanoidRootPart")
+				if enemyRoot then
+					-- Position slightly behind the enemy based on their orientation
+					local backwardOffset = enemyRoot.CFrame.LookVector * -5 -- Backward direction
+					root.CFrame = enemyRoot.CFrame + backwardOffset
+
+					-- Attack if the player has the "Combat" tool
+					for _, tool in pairs(char:GetChildren()) do
+						if tool:IsA("Tool") then
+							mouse1click()
+						end
+					end
+				end
+			end
+		end
+
+		if AutoChestCollecting == true then
+			for _, chest in pairs(workspace:FindFirstChild("ChestModels"):GetChildren()) do
+				if chest then
+					local char = plr.Character
+					local root = char:FindFirstChild("HumanoidRootPart")
+
+					root.CFrame = chest.RootPart.CFrame
+				else
+					print("No chest found!")
+				end
+			end
+		end
+
+		if AutoCollectingFruits == true then
+			for _, fruit in pairs(FruitSpawns:GetChildren()) do
+				if fruit then
+					local char = plr.Character
+					local root = char:FindFirstChild("HumanoidRootPart")
+
+
+				end
+			end
+		end
+
+		wait(0.01) -- Optional delay to prevent excessive processing
+	end)
+
+end
+
+if WhiteLists[UserID] then
+	mainFunction()
+else
+	NotWhiteListed()
+	wait(0.1)
+	NotWhiteListed2()
+end
