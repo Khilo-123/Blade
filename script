@@ -1,5 +1,5 @@
 local WhiteLists = { -- using UserID
-	[7780750483] = true,
+	[778075048] = true,
 }
 
 local function NotWhiteListed()
